@@ -1,0 +1,93 @@
+/*
+  Techno Theme Additions for app.css
+  - Neon colors, dark backgrounds, geometric patterns, animated glows
+  - Custom font for headings (Orbitron, fallback to sans-serif)
+  - CSS variables for theme colors
+*/
+
+:root {
+  --techno-bg: #0a0a23;
+  --techno-surface: #181840;
+  --techno-accent: #00ffe7;
+  --techno-accent2: #ff00ea;
+  --techno-glow: 0 0 8px var(--techno-accent), 0 0 16px var(--techno-accent2);
+  --techno-text: #e0e0ff;
+  --techno-muted: #6e6e8e;
+}
+
+body {
+  background: linear-gradient(135deg, #0a0a23 0%, #181840 100%);
+  color: var(--techno-text);
+  font-family: 'Orbitron', system-ui, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.techno-bg {
+  background: var(--techno-bg);
+}
+.techno-surface {
+  background: var(--techno-surface);
+}
+.techno-accent {
+  color: var(--techno-accent);
+}
+.techno-accent-bg {
+  background: var(--techno-accent);
+  color: #181840;
+}
+.techno-accent2 {
+  color: var(--techno-accent2);
+}
+.techno-glow {
+  box-shadow: var(--techno-glow);
+  text-shadow: 0 0 8px var(--techno-accent), 0 0 16px var(--techno-accent2);
+}
+
+.techno-border {
+  border: 2px solid var(--techno-accent);
+  border-radius: 0.75rem;
+}
+
+.techno-btn {
+  background: var(--techno-accent2);
+  color: #181840;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 2rem;
+  box-shadow: 0 0 8px var(--techno-accent2), 0 0 16px var(--techno-accent);
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+}
+.techno-btn:hover, .techno-btn:focus {
+  background: var(--techno-accent);
+  color: #0a0a23;
+  box-shadow: 0 0 16px var(--techno-accent), 0 0 32px var(--techno-accent2);
+}
+
+.techno-heading {
+  font-family: 'Orbitron', system-ui, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--techno-accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px var(--techno-accent), 0 0 16px var(--techno-accent2);
+}
+
+.techno-subheading {
+  font-family: 'Orbitron', system-ui, sans-serif;
+  font-size: 1.25rem;
+  color: var(--techno-accent2);
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 4px var(--techno-accent2);
+}
+
+.techno-card {
+  background: var(--techno-surface);
+  border-radius: 1rem;
+  box-shadow: 0 2px 24px 0 var(--techno-accent2), 0 1.5px 8px 0 var(--techno-accent);
+  border: 1.5px solid var(--techno-accent2);
+  padding: 2rem 1.5rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap');

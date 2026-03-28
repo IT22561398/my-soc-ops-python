@@ -1,0 +1,124 @@
+/*
+  Corporate Clean Blue, Glassmorphism, Chrome Accents
+  - Blue gradients, glass UI, metallic chrome borders/shadows
+  - Professional sans-serif font
+  - CSS variables for theme
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+:root {
+  --corporate-blue1: #2563eb;
+  --corporate-blue2: #1e3a8a;
+  --corporate-blue3: #60a5fa;
+  --corporate-blue4: #e0f2ff;
+  --corporate-glass-bg: rgba(255,255,255,0.22);
+  --corporate-glass-blur: blur(24px);
+  --corporate-chrome: linear-gradient(90deg, #e0e0e0 0%, #b0b0b0 50%, #f0f0f0 100%);
+  --corporate-shadow: 0 8px 40px 0 rgba(30,58,138,0.13), 0 2px 12px 0 rgba(96,165,250,0.10);
+  --corporate-border: 1.5px solid rgba(96,165,250,0.22);
+  --corporate-text: #1e293b;
+  --corporate-muted: #64748b;
+}
+
+body {
+  background: linear-gradient(120deg, var(--corporate-blue2) 0%, var(--corporate-blue1) 60%, var(--corporate-blue3) 100%);
+  color: var(--corporate-text);
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Open Sans', Arial, sans-serif;
+  letter-spacing: 0.01em;
+  min-height: 100vh;
+  background-attachment: fixed;
+  /* Subtle pattern overlay */
+  position: relative;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(135deg, rgba(255,255,255,0.02) 0 2px, transparent 2px 40px);
+  z-index: 0;
+}
+
+.corp-glass {
+  background: var(--corporate-glass-bg);
+  backdrop-filter: var(--corporate-glass-blur);
+  -webkit-backdrop-filter: var(--corporate-glass-blur);
+  border-radius: 1.5rem;
+  box-shadow: var(--corporate-shadow);
+  border: var(--corporate-border);
+  position: relative;
+  z-index: 1;
+}
+
+.corp-chrome {
+  background: var(--corporate-chrome);
+  color: var(--corporate-blue2);
+  border-radius: 0.5rem;
+  font-weight: bold;
+  box-shadow: 0 0 8px #b0b0b0, 0 0 16px #e0e0e0;
+}
+
+.corp-btn {
+  background: linear-gradient(90deg, var(--corporate-blue3) 0%, var(--corporate-blue1) 100%);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.85rem 2.2rem;
+  box-shadow: 0 2px 16px 0 rgba(30,58,138,0.13);
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s, transform 0.15s;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Open Sans', Arial, sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
+}
+.corp-btn::after {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: linear-gradient(120deg, rgba(255,255,255,0.12) 0%, transparent 100%);
+  pointer-events: none;
+  border-radius: inherit;
+}
+.corp-btn:hover, .corp-btn:focus {
+  background: linear-gradient(90deg, var(--corporate-blue1) 0%, var(--corporate-blue3) 100%);
+  color: #e0f2ff;
+  box-shadow: 0 6px 32px 0 rgba(30,58,138,0.18);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.corp-heading {
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Open Sans', Arial, sans-serif;
+  font-size: 2.7rem;
+  font-weight: 900;
+  color: var(--corporate-blue4);
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 12px #2563eb, 0 1px 2px #fff;
+  margin-bottom: 0.5rem;
+}
+
+.corp-subheading {
+  font-size: 1.3rem;
+  color: var(--corporate-blue3);
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.corp-card {
+  background: var(--corporate-glass-bg);
+  backdrop-filter: var(--corporate-glass-blur);
+  -webkit-backdrop-filter: var(--corporate-glass-blur);
+  border-radius: 1.5rem;
+  box-shadow: var(--corporate-shadow);
+  border: var(--corporate-border);
+  padding: 2.2rem 1.7rem;
+  position: relative;
+  z-index: 1;
+}
+
+.corp-muted {
+  color: var(--corporate-muted);
+}
